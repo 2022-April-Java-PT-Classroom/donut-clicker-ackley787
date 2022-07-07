@@ -17,20 +17,20 @@ describe("DonutMaker", () => {
         //Act
         underTest.addAutoclicker();
         //Assert
-        expect(underTest.autoClickerCost).toEqual(100);
+        expect(underTest.autoClickerCost).toEqual(110);
         expect(underTest.numDonuts).toEqual(0);
         expect(underTest.numAutoClicker).toEqual(1);
 
     });
 
-    // test("should NOT be able to purchase an autoclicker with 99 donuts", () => {
-    //     const underTest = new DonutMaker(99, 0);
-    //     underTest.addAutoclicker();
-    //     expect(underTest.numDonuts).toEqual(99);
-    //     expect(underTest.numAutoClicker).toEqual(0);
+    test("should NOT be able to purchase an autoclicker with 99 donuts", () => {
+        const underTest = new DonutMaker(99, 0, 0);
+        underTest.addAutoclicker();
+        expect(underTest.numDonuts).toEqual(99);
+        expect(underTest.numAutoClicker).toEqual(0);
 
 
-    // })
+    })
 
         // Next Auto Clicker Purchase	Cost
         // 1	100 donuts
@@ -38,38 +38,61 @@ describe("DonutMaker", () => {
         // 3	121 donuts
         // 4	133 donuts
 
-    // test("should increase the cost of an autoclicker by 10%", () => {
-    //     const underTest = new DonutMaker(100, 0, 0);
-    //     underTest.addAutoclicker();
-    //     expect(underTest.numDonuts).toEqual(0);
-    //     expect(underTest.autoClickerCost).toEqual(110);
-    //     expect(underTest.numAutoClicker).toEqual(1);
-    // })
+    test("should increase the cost of an autoclicker by 10%", () => {
+        const underTest = new DonutMaker(100, 0, 0);
+        underTest.addAutoclicker();
+        expect(underTest.numDonuts).toEqual(0);
+        expect(underTest.autoClickerCost).toEqual(110);
+        expect(underTest.numAutoClicker).toEqual(1);
+    })
 
-    // test("should increase the cost of a 2nd autoclicker by 10%", () => {
-    //     const underTest = new DonutMaker(121, 2, 0);
-    //     expect(underTest.autoClickerCost).toEqual(100);
-    //     underTest.addAutoclicker();
-    //     expect(underTest.numDonuts).toEqual(21);
-    //     expect(underTest.autoClickerCost).toEqual(110);
-    //     underTest.addAutoclicker();
-    //     underTest.addAutoclicker();
-    //     expect(underTest.numAutoClicker).toEqual(3);
-    //     expect(underTest.autoClickerCost).toEqual(121);
-    // })
+    test("should increase the cost of a 2nd autoclicker by 10%", () => {
+        const underTest = new DonutMaker(221, 0, 0);
+        expect(underTest.autoClickerCost).toEqual(100);    
+        underTest.addAutoclicker();
+        expect(underTest.numDonuts).toEqual(121);
+        expect(underTest.autoClickerCost).toEqual(110);
+        expect(underTest.numAutoClicker).toEqual(1);
+        underTest.addAutoclicker();
+        expect(underTest.numDonuts).toEqual(11);
+        expect(underTest.autoClickerCost).toEqual(121);
+        expect(underTest.numAutoClicker).toEqual(2);
+       
+    })
 
-    // test("when activating the autoClicker should add donuts based upon how many autoClickers owned", () => {
-    //     const underTest = new DonutMaker(100, 0);
-    //     expect(underTest.numDonuts).toEqual(100);
-    //     underTest.addAutoclicker();
-    //     expect(underTest.numDonuts).toEqual(0);
-    //     underTest.activateAutoClickers();
-    //     underTest.addDonut();
-    //     expect(underTest.numDonuts).toEqual(1);
+    
+    test("should increase the cost of a 3rd autoclicker by 10%", () => {
+        const underTest = new DonutMaker(331, 0, 0);
+        expect(underTest.autoClickerCost).toEqual(100);    
+        underTest.addAutoclicker();
+        expect(underTest.numDonuts).toEqual(231);
+        expect(underTest.autoClickerCost).toEqual(110);
+        expect(underTest.numAutoClicker).toEqual(1);
+        underTest.addAutoclicker();
+        expect(underTest.numDonuts).toEqual(121);
+        expect(underTest.autoClickerCost).toEqual(121);
+        expect(underTest.numAutoClicker).toEqual(2);
+        underTest.addAutoclicker();
+        expect(underTest.numDonuts).toEqual(0);
+        expect(underTest.autoClickerCost).toEqual(133);
+        expect(underTest.numAutoClicker).toEqual(3);
+       
+    })
+
+    test("when activating the autoClicker should add donuts based upon how many autoClickers owned", () => {
+        const underTest = new DonutMaker(100, 0, 0);
+        underTest.addAutoclicker();
+        expect(underTest.numDonuts).toEqual(0);
+        underTest.activateAutoClickers();
+        expect(underTest.numAutoClicker).toEqual(1);
+        expect(underTest.numDonuts).toEqual(1.2);
+        underTest.activateAutoClickers();
+        underTest.addDonut();
+        expect(underTest.numDonuts).toEqual(1);
              
-    // }) 
+    }) 
 
-    // test("when activating the autoClicker should add donuts based upon how many autoClickers owned", () => {
+    // test("when activating 2 autoClickers should add donuts based upon how many autoClickers owned", () => {
     //     const underTest = new DonutMaker(500, 2, 0);
     //     expect(underTest.numDonuts).toEqual(500);
     //     underTest.addAutoclicker();
