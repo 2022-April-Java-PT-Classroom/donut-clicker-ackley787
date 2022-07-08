@@ -1,13 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Open+Sans&display=swap" rel="stylesheet">
+
     <title>Donut Clicker</title>
   </head>
+
+  <nav>
+    <div class="nav container">
+    <ul>
+      <li><button onclick="about()">About Us</button></li>
+      <li><button onclick="showDev()">The Dev</button></li>
+      <li>
+        <button>
+          <a
+            href="https://orteil.dashnet.org/cookieclicker/"
+            target="_blank"
+            >Inspiration</a
+          >
+        </button>
+      </li>
+     </ul>
+
+    </div>
+  </nav>
+
+<header>
+
+  <h1>Fred The Baker Baking Company</h1>
+
+
+</header>
+
+<div class="hidden texts container">
+  <section class="about us hidden texts" hidden>
+
+    <h3>About Us</h3>
+    <p>
+      is a tribute to Jolley Pirate donuts. Thanks for all the amazing donuts!
+    </p>
+
+  </section>
+
+  <section class="dev hidden texts" hidden>
+
+    <h3>The Developer</h3>
+
+    <p>Adam Ackley</p>
+    <p>Email: ackley787@gmail.com</p>
+
+    <a class="fa fa-github" href="https://github.com/ackley787" <i class="fa fa-github" style="font-size:18px;color:white;text-decoration: none;"> Github</i>
+    </a>
+
+    <a class="fa fa-linkedin-square" href="https://linkedin.com/in/adam-ackley78"<i class="fa fa-linkedin-square" style="font-size:18.25px;color:white;text-decoration: none;"> Linkedin
+    </i> 
+    </a>
+  </section>
+
+  <section class="hidden texts" hidden>
+
+    <h3>The inspiration for this game, Cookie Clicker</h3>
+
+    <p>This website is inspired by the original Cookie Clicker Game</p>
+    <button>
+      <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank"
+        >Inspiration</a
+      >
+    </button>
+
+  </section>
+
+  <div class="content">
+    <nav class="sidebar">
+      <ul class="side-nav">
+        <button class="make donut side nav item">
+          Click to Make Donuts!
+        </button>
+        <button class="autoClicker Button side nav item" disabled>
+          Buy AutoClicker!
+        </button>
+        <button class="multiplier Button side nav item" disabled>
+          Buy Multiplier!
+        </button>
+      </ul>
+    </nav>
+
+    <main class="main-view">
+      <div>
+        <figure>
+          <img
+            src="imgages/donut.png"
+            alt=""
+            class=""
+          />
+        </figure>
+        
+      
+      </div>
+
+      <div class="heading">
+        <h1>Fred The Baker Baking Company</h1>
+      </div>
+
+      <div class="detail">
+        <div class="description">
+          <div class="desc-title">Donut Count :</div>
+          <div class="donut-count">0</div>
+          <div class="cost">
+            <span>Per Click : </span>
+            <div class="donut-value">1</div>
+          </div>
+          <hr />
+          <div class="desc-title">Number of Auto Clickers :</div>
+          <div class="autoClickerCount">0</div>
+          <div class="cost">
+            <span>Cost :</span>
+            <div class="autoClickerCost">100</div>
+          </div>
+          <hr />
+          <div class="desc-title">Number of Donut Multipliers :</div>
+          <div class="multiplierCount">0</div>
+          <div class="cost">
+            <span>Cost : </span>
+            <div class="m-cost">10</div>
+          </div>
+        </div>
+      </div>
+
+
+
+</div>
+
+
+
   <body>
     <div class="container"></div>
     <script src="./index.js"></script>
   </body>
+
+  <div class="footer">
+  <footer>
+
+    &copy; Adam Ackley 2022
+
+    </footer>
+  </div>
 </html>
