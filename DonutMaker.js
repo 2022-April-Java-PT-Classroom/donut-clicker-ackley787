@@ -21,9 +21,14 @@ class DonutMaker{
         return this.numAutoClicker;
     }
 
-    getMultiplerCount() {
+    getMultiplierCount() {
 
         return this.multiplierCount;
+    }
+
+    getMultiplierCost() {
+        
+        return this.multiplierCost;
     }
 
     addDonut() {
@@ -44,7 +49,7 @@ class DonutMaker{
         this.autoClickerCost = Math.round(this.autoClickerCost * 1.1)
    
     }
-    addMultipler() {
+    addMultiplier() {
       
         if (this.numDonuts >= this.multiplierCost) {
             this.numDonuts -= this.multiplierCost;

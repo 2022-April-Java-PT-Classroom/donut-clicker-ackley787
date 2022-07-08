@@ -1,4 +1,4 @@
-import DonutMaker from "./DonutMaker";
+import DonutMaker from "w /DonutMaker";
 
 describe("DonutMaker", () => {
 
@@ -126,7 +126,7 @@ describe("DonutMaker", () => {
         const underTest = new DonutMaker(10, 0, 0);
         expect(underTest.numDonuts).toEqual(10);
         expect(underTest.multiplierCost).toEqual(10);
-        underTest.addMultipler();
+        underTest.addMultiplier();
         expect(underTest.numDonuts).toEqual(0);
         underTest.activateMultipliers();
         expect(underTest.multiplierCost).toEqual(11);
@@ -139,10 +139,10 @@ describe("DonutMaker", () => {
         const underTest = new DonutMaker(21, 0, 0);
         expect(underTest.numDonuts).toEqual(21);
         expect(underTest.multiplierCost).toEqual(10);
-        underTest.addMultipler();
+        underTest.addMultiplier();
         expect(underTest.numDonuts).toEqual(11);
         expect(underTest.multiplierCost).toEqual(11);
-        underTest.addMultipler();
+        underTest.addMultiplier();
         expect(underTest.numDonuts).toEqual(0);
         expect(underTest.multiplierCost).toEqual(12);
         underTest.activateMultipliers();
@@ -154,13 +154,13 @@ describe("DonutMaker", () => {
         const underTest = new DonutMaker(33, 0, 0);
         expect(underTest.numDonuts).toEqual(33);
         expect(underTest.multiplierCost).toEqual(10);
-        underTest.addMultipler();
+        underTest.addMultiplier();
         expect(underTest.numDonuts).toEqual(23);
         expect(underTest.multiplierCost).toEqual(11);
-        underTest.addMultipler();
+        underTest.addMultiplier();
         expect(underTest.numDonuts).toEqual(12);
         expect(underTest.multiplierCost).toEqual(12);
-        underTest.addMultipler();
+        underTest.addMultiplier();
         expect(underTest.numDonuts).toEqual(0);
         underTest.activateMultipliers();
         expect(underTest.numDonuts).toEqual(1.7279999999999998);
