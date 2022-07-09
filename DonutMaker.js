@@ -90,6 +90,4 @@ class DonutMaker{
     //     this.activateMultipliers();    
 
     // }
-}
-
-export default DonutMaker;
+} export default DonutMaker;

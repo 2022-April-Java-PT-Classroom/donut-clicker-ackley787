@@ -1,4 +1,4 @@
-import DonutMaker from "w /DonutMaker";
+import DonutMaker from "./DonutMaker.js";
 
 describe("DonutMaker", () => {
 

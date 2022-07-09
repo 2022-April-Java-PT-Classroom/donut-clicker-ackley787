@@ -61,44 +61,39 @@ body{
 h1 {
     text-align: center;
     margin-top: 3em;
+    margin-bottom: 1em;
     font-size: 40px;
     color: #242539;
     background: #dcdcdc;
     
 }
 
+
+
 main {  
     height: calc(100vh - 40vh);
 }
 
 .main-view .image {
+   
     max-width: 400px;
     max-height: 400px;
-  
-   
+       
 }
 
 .main-view button {
+    
     display: flex;
     margin: auto;
     max-width: 400px;
     max-height: 400px;
     border-radius: 50%;
     background: none;
-    
-    
+       
 }
 
 .main-view button:hover {
     background-color:  #dcdcdc;
-}
-
-
-left-sidebar {
-    width: 300px;
-    height: 100%;
-    background: #242539;
-
 }
 
 .cards {
@@ -106,21 +101,17 @@ left-sidebar {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 6em;
-    padding: 2em;
-    
-  
+    padding: 1em;
+      
  }
- 
  
  .card {
     background: #dcdcdc;
-    flex: 0 0 300px;
+    flex: 0 0 260px;
     height: 260px;
-    width: 200 px;
+    width: 300 px;
     text-align: center;
     margin: 1em 1em 1em 1em;
-    padding: .25em; 
     -webkit-box-shadow: 0px 10px 13px -7px #000000, 
     5px 5px 15px 5px rgba(0,0,0,0); 
     box-shadow: 0px 10px 13px -7px #000000,
@@ -130,12 +121,49 @@ left-sidebar {
 
  .card li {
     margin-top: 1em;
+    color: #242539;
  }
 
  .card button {
     padding: .25em;
     margin-top: 1em;
  }
+
+.reset-button {
+   
+    max-width: 200 px;
+    height: 200 px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: em;
+    padding: 2em;
+}
+.reset-button button {
+    max-width: 200 px;
+    height: 200 px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 8em;
+    padding: 2em;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 
+    5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0,0,0,0);
+    
+}
+
+
+.dropdown li {
+    height: 100px;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: 0;
+    color: white;
+}
 
 .footer {   
     display: flex;

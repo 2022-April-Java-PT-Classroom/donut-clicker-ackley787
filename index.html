@@ -19,15 +19,16 @@
   <nav class="nav">
     <div>
     <ul>
-      <li><button onclick="about()">About Us</button></li>
+      <li><button onhover="about">About Us</button></li>
     </div>
       <div>
-      <li><button onclick="showDev()">The Dev</button></li>
+      <li><button onhover="show">The Dev</button></li>
     </div>
       <div>
       <li><button><a href="https://orteil.dashnet.org/cookieclicker/">Inspiration</a>
         </button>
       </li>
+
     </ul>
     </div>
 
@@ -38,54 +39,26 @@
  <header><h1>Fred The Baker Baking Company</h1></header>
 </div>
 
- <div class="hidden texts container">
-  <section class="about-us hidden-texts" hidden>
+ <div class="dropdown">
+      
+    <li>The inspiration for this game, Cookie Clicker</li>
+    <li>The Developer</li>
+    <li>Adam Ackley</li>
+    <li>Email: ackley787@gmail.com</li>
 
-    <h3>About Us</h3>
-    <p>
-      is a tribute to Jolley Pirate donuts. Thanks for all the amazing donuts!
-    </p>
+    <li class="fa fa-github" href="https://github.com/ackley787" <i class="fa fa-github" style="font-size:18px;color:white;text-decoration: none;"> Github</i>
+    </li>
 
-  </section>
-
-  <section class="dev hidden-texts" hidden>
-
-    <h3>The Developer</h3>
-
-    <p>Adam Ackley</p>
-    <p>Email: ackley787@gmail.com</p>
-
-    <a class="fa fa-github" href="https://github.com/ackley787" <i class="fa fa-github" style="font-size:18px;color:white;text-decoration: none;"> Github</i>
-    </a>
-
-    <a class="fa fa-linkedin-square" href="https://linkedin.com/in/adam-ackley78"<i class="fa fa-linkedin-square" style="font-size:18.25px;color:white;text-decoration: none;"> Linkedin
-    </i> 
-    </a>
-  </section>
-
-  <section class="hidden-texts">
-
-    <h3>The inspiration for this game, Cookie Clicker</h3>
-
-    <p>This website is inspired by the original Cookie Clicker Game</p>
-    <button>
-      <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank"
-        >Inspiration</a
-      >
-    </button>
-
-  </section>
-
-  <div class="left-sidebar">
-    
+    <li class="fa fa-linkedin-square" href="https://linkedin.com/in/adam-ackley78"<i class="fa fa-linkedin-square" style="font-size:18.25px;color:white;text-decoration: none;"> Linkedin
+    </i></li>
+  </div>
+  
      <main>
       
       <div class="main-view">
         <button class="make-donut"><img class= "image" src="images/donut.png"/></button> 
       </div>
   
-      
-
         <div class="cards">
           <div class="card">
             <li> Donut Count :</li>
@@ -97,14 +70,12 @@
             </button>
             </div>
 
-         
-
             <div class="card">
             <li>Number of Auto Clickers :</li>
             <li class="autoClicker-count">0</li>       
             <li>Auto Clicker Cost :</li>
             <li class="autoClicker-cost">100</li>
-            <button class="autoClicker-btn">
+            <button class="autoClicker-button" disabled>
               Buy AutoClicker!
             </button>
             </div>
@@ -115,18 +86,20 @@
             <li class="multiplier-count">0</li>
             <li>Multiplier Cost : </li>
             <li class="multiplier-cost">10</li>
-            <button class="multiplier-button">
+            <button class="multiplier-button" disabled>
               Buy Multiplier!
             </button>
             </div>
         </div>
-     
-
-  
-    <div class="app"></div>
-    <script src="/index.js"></script>
-  </body> 
+      
+        <div class="reset-button">
+          <button class="reset">Reset</button>
+        </div>
+    
   </main>
+  <script type="module" src="/DonutMaker.js"></script>
+    <script type="module" src="/index.js"></script>
+</body>
   <div class="footer">
   <footer>
 

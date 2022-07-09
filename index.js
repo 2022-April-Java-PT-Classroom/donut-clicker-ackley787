@@ -1,124 +1,109 @@
-const donutMaker = new DonutMaker();
+import DonutMaker from "./DonutMaker";
+
+// queryselectors
 
 const aboutUs = document.querySelector(".about-us");
 const dev = document.querySelector(".dev");
 const resetButton = document.querySelector(".reset");
-
 
 const numDonuts = document.querySelector(".donut-count");
 const donutButton = document.querySelector(".make-donut");
 const donutValue = document.querySelector(".donut-value");
 
 const numAutoClicker = document.querySelector(".autoClicker-count");
-const buyAutoClickerButton = document.querySelector(".autoClicker-btn");
+const buyAutoClickerButton = document.querySelector(".autoClicker-button");
 const autoClickerCost = document.querySelector(".autoClicker-cost");
 
 const multiplierCount = document.querySelector(".multiplier-count");
 const buyMultiplierButton = document.querySelector(".multiplier-button");
 const multiplierCost = document.querySelector(".multiplier-cost");
 
-const about = () => {
-  if (aboutUs.style.display === "block") {
-    aboutUs.style.display = "none"
-  } else {
-    aboutUs.style.display = "block"
-  }
-}
-
-const showDev = () => {
-  if (dev.style.display === "block") {
-    dev.style.display = "none"
-  } else {
-    dev.style.display = "block"
-  }
-}
+const DonutMaker = new DonutMaker(numDonuts, numAutoClicker, multiplierCount);
 
 const reset = resetButton => {
-  resetButton.addEventListener("click", () => {
+    resetButton.addEventListener("click", () => {
     location.reload();
   })
 }
 
-const updateNumDonuts = (numDonuts, donutMaker) => {
-  numDonuts.textContent = Math.round(donutMaker.getNumDonuts());
+const updateNumDonuts = (numDonuts, DonutMaker) => {
+    numDonuts.innerHTML = Math.round(DonutMaker.getNumDonuts());
 }
 
-const updateAutoClickerCount = (numAutoClicker, donutMaker) => {
-  numAutoClicker.textContent = Math.round(donutMaker.getAutoClicker());
+const updateAutoClickerCount = (numAutoClicker, DonutMaker) => {
+    numAutoClicker.innerHTML = Math.round(DonutMaker.getAutoClicker());
 }
 
-const updateAutoClickerCost = (autoClickerCost, donutMaker) => {
-  autoClickerCost.textContent = Math.round(donutMaker.getAutoClickerCost());
+const updateAutoClickerCost = (autoClickerCost, DonutMaker) => {
+    autoClickerCost.innerHTML = Math.round(DonutMaker.getAutoClickerCost());
 }
 
-const updateMultiplierCount = (multiplierCount, donutMaker) => {
-  multiplierCount.textContent = Math.round(donutMaker.getMultiplierCount());
+const updateMultiplierCount = (multiplierCount, DonutMaker) => {
+    multiplierCount.innerHTML = Math.round(DonutMaker.getMultiplierCount());
 }
 
-const updateMultiplierCost = (multiplierCost, donutMaker) => {
-  multiplierCost.textContent = Math.round(donutMaker.getMultiplierCost());
-}
-
-const updateDonutValue = (donutValue, donutMaker) => {
-  donutValue.textContent = donutMaker.getNumDonuts().toFixed(1);
+const updateMultiplierCost = (multiplierCost, DonutMaker) => {
+    multiplierCost.innerHTML = Math.round(DonutMaker.getMultiplierCost());
 }
 
 const autoClicker = setInterval(autoClick, 1000);
 
 function autoClick() {
-  updateNumDonuts(numDonuts, donutMaker);
-  donutMaker.makeAutoClickerWork();
-  enableAutoClickerButton();
-  enableMultiplierButton();
+    updateNumDonuts(numDonuts, DonutMaker);
+    DonutMaker.makeAutoClickerWork();
+    enableAutoClickerButton();
+    enableMultiplierButton();
 }
 
-const makeDonutsButton = (donutButton, numDonuts, donutMaker) => {
-  donutButton.addEventListener("click", () => {
-    donutMaker. addDonut();
-    updateDonutCount(numDonuts, donutMaker);
+const makeDonutsButton = (donutButton, numDonuts, DonutMaker) => {
+    donutButton.addEventListener("click", () => {
+    DonutMaker.addDonut();
+    updateNumDonuts(numDonuts, DonutMaker);
+
   })
 }
 
-const makeBuyAutoClickerButton = (numAutoClicker, buyAutoClickerButton, autoClickerCost, donutMaker) => {
-  buyAutoClickerButton.addEventListener("click", () => {
-    donutMaker.addAutoClicker();
-    updateAutoClickerCount(numAutoClicker, donutMaker);
-    updateAutoClickerCost(autoClickerCost, donutMaker);
+const makeBuyAutoClickerButton = (numAutoClicker, buyAutoClickerButton, autoClickerCost, DonutMaker) => {
+    buyAutoClickerButton.addEventListener("click", () => {
+    DonutMaker.addAutoClicker();
+    updateAutoClickerCount(numAutoClicker, DonutMaker);
+    updateAutoClickerCost(autoClickerCost, DonutMaker);
   })
 }
 
 const makeBuyMultiplierButton = (multiplierCount, buyMultiplierButton, multiplierCost,
-  donutMaker) => {
-  buyMultiplierButton.addEventListener("click", () => {
-    donutMaker.addMultiplier();
-    updateMultiplierCount(multiplierCount, donutMaker);
-    updateMultiplierCost(multiplierCost, donutMaker);
-    updateDonutValue(donutValue, donutMaker);
+    DonutMaker) => {
+    buyMultiplierButton.addEventListener("click", () => {
+    DonutMaker.addMultiplier();
+    updateMultiplierCount(multiplierCount, DonutMaker);
+    updateMultiplierCost(multiplierCost, DonutMaker);
+    updateNumDonuts(donutValue, DonutMaker);
+    
   })
 }
 
 function enableAutoClickerButton() {
-  if (donutMaker.donutClick >= donutMaker.autoClickerCost) {
+  if (DonutMaker.numDonuts >= DonutMaker.autoClickerCost) {
     buyAutoClickerButton.removeAttribute("disabled")
   } else {
-    acBtn.disabled = true
+    buyAutoClickerButton.disabled = true
   }
 }
 
 function enableMultiplierButton() {
-  if (donutMaker.donutClick >= donutMaker.multiplierCost) {
+  if (DonutMaker.numDonuts >= DonutMaker.multiplierCost) {
     buyMultiplierButton.removeAttribute("disabled")
   } else {
     buyMultiplierButton.disabled = true
   }
 }
 
-makeDonutsButton(donutButton, numDonuts, donutMaker);
+makeDonutsButton(donutButton, numDonuts, DonutMaker);
 
-makeBuyAutoClickerButton(numAutoClicker, buyAutoClickerButton, autoClickerCost, donutMaker);
+makeBuyAutoClickerButton(numAutoClicker, buyAutoClickerButton, autoClickerCost, DonutMaker);
 
-makeBuyMultiplierButton(multiplierCount, buyMultiplierButton, multiplierCost, donutMaker);
+makeBuyMultiplierButton(multiplierCount, buyMultiplierButton, multiplierCost, DonutMaker);
 
-updateDonutValue(donutValue, donutMaker);
+updateNumDonuts(numDonuts, DonutMaker);
 
 reset(resetButton);
